@@ -1,0 +1,35 @@
+@mixin linearGradient ($top, $bottom)
+   background: -moz-linear-gradient(top, $top, $bottom) /* FF3.6+ */
+   background: -webkit-gradient(top, $top, $bottom) /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top, $top, $bottom) /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top, $top, $bottom) /* Opera 11.10+ */
+   background: -ms-linear-gradient(top, $top, $bottom) /* IE10+ */
+   background: linear-gradient(to bottom, $top, $bottom) /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ) /* IE6-9 */
+
+@mixin section-color ($color)
+   width: 100%
+   background-color: $color                                                       
+   
+@mixin section-container
+   width: 100%
+   max-width: 1200px
+   box-sizing: padding-box
+   padding: 20px 60px 30px
+   margin: 0 auto
+
+@mixin linx ($link, $visit, $hover, $active) 
+   a 
+      color: $link
+      &:visited 
+         color: $visit
+      &:hover 
+         color: $hover   
+      &:active 
+         color: $active
+
+@mixin font ($size, $family, $color) 
+   font-size: $size
+   font-family: $family
+   color: $color
+   @content

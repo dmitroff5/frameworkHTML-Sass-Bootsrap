@@ -1,0 +1,100 @@
+@import "_my_mixins.sass"  
+@import "_my_variables.sass" 
+@import "_my_popup.sass" 
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script")  
+
+.preloader 
+   position: fixed
+   width: 100%
+   height: 100%
+   top: 0
+   left: 0
+   background: rgba(0, 0, 0, .3)
+   color: #fff
+   z-index: 100
+   text-align: center
+   line-height: 30
+   
+   img
+      display: inline-block
+      width: 50px
+      height: 50px
+
+
+//очистите float, добавив .clearfix в родительский элемен
+.element  
+   @include clearfix 
+ 
+html 
+   height: 100%
+   
+*   
+   white-space: normal  //перенос текста во всех элементах
+
+body
+   height: 100% 
+   font: 20px/30px Arial, sans-serif, Tahoma
+   line-height: 1.5
+   
+h1
+   @include font (36px, Arial,  black) 
+   text-transform: uppercase
+   text-align: center 
+   font-weight: bold 
+   
+/*Параллакс эффект*/
+.parallax  
+   min-height: 20vh
+   background: transparent 
+
+.bg
+   width: 100%
+   height: 20vh
+   background-color: rgba(0, 0, 0, .6)
+
+/*Анимация*/
+button
+   display: inline-block
+   
+.btn-animation 
+   animation-duration: 3s 
+   animation-delay: 2s 
+   animation-iteration-count: 3   
+   
+/*Карточки*/
+.my-border
+   border: 2px solid blue 
+
+/*Flex*/
+.flex-container
+   width: 100wv
+   height: 300px
+   
+   
+.flex-example
+
+   
+
+
+/*Медиа с Bootstrap 4*/
+.custom-class  
+   width: 100px
+   height: 100px
+   background-color: green
+ 
+@include media-breakpoint-down(md) 
+   .custom-class  
+      background-color: red 
+   
+// Не существует медиа-запрос для брекпоинта xs, поскольку это фактически `@media (min-width: 0)  
+@include media-breakpoint-up(sm)  
+@include media-breakpoint-up(md)  
+@include media-breakpoint-up(lg)  
+@include media-breakpoint-up(xl) 
+
+@include media-breakpoint-down(xs)  
+@include media-breakpoint-down(sm)  
+@include media-breakpoint-down(md)  
+@include media-breakpoint-down(lg)  
+ 
+@include media-breakpoint-between(md, xl) 
